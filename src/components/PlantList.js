@@ -1,16 +1,14 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({ plant }) {
+function PlantList({ onFilteredPlants }) {
 
-  const newCards = plant.map((plant) => {
-    return (<PlantCard key={plant.id} plant={plant} />)
+  const plantCards = onFilteredPlants.map((plantObj) => {
+    return <PlantCard key={plantObj.id} plant={plantObj} />
   })
 
   return (
-    <ul className="cards">
-      {newCards}
-    </ul>
+    <ul className="cards">{plantCards}</ul>
   );
 }
 
